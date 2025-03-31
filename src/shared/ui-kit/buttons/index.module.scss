@@ -1,0 +1,14 @@
+.ButtonPrimary{
+  &:hover{
+    background-color: var(--accent);
+    color: var(--white);
+  }
+
+  svg path{
+    stroke: var(--black);
+  }
+
+  &:hover svg path{
+    stroke: var(--white);
+  }
+}

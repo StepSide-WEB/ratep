@@ -1,0 +1,167 @@
+@mixin hidden-block {
+  transform: scaleY(0);
+  transform-origin: top;
+  max-height: 0px;
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 250ms ease-in-out, max-height 350ms ease-in-out, opacity 150ms ease-in-out, visibility 0s 450ms;
+}
+
+@mixin visible-block {
+  transform: scaleY(1);
+  max-height: 100vh;
+  opacity: 1;
+  visibility: visible;
+  transition: transform 250ms ease-in-out, opacity 150ms ease-in-out, visibility 0s;
+}
+
+.Header{
+  .Dropdown{
+    @include hidden-block;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    background-color: var(--white);
+    width: 100%;
+    font-size: 24px;
+    font-weight: 450;
+    border-top: 1px solid var(--border);
+    
+    a{
+      width: fit-content;
+    }
+  }
+
+  .List{
+    a{
+      transition: all 150ms ease-in-out;
+    }
+
+    a.Open{
+      opacity: 0.6;
+    }
+    
+    @media (min-width: 1280px){
+      li:hover .Dropdown, li .Dropdown:hover{
+        @include visible-block;
+      }
+      li:hover .Overlay{
+        opacity: 1;
+      }
+      li:hover > a{
+        opacity: 0.6;
+      }
+      a:hover{
+        opacity: 0.6;
+      }
+      .Content{
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+        row-gap: 18px;
+        background-color: white;
+        height: fit-content;
+      }
+    }
+    li{
+      flex-direction: column;
+    }
+  }
+
+  .MenuContainer{
+    @include hidden-block;
+    display: flex;
+    height: 100%;
+    line-height: 1;
+
+    li{
+      border-bottom: 1px solid var(--black-10);
+      display: flex;
+      width: 100%;
+    }
+
+    a{
+      display: flex;
+      column-gap: 8px;
+      padding: 16px;
+      width: 100%;
+      border: none;
+    }
+  }
+
+  @media (max-width: 1279px) {
+    .Dropdown {
+      @include hidden-block;
+      padding: 0;
+      top: 0;
+      row-gap: 0;
+      font-size: 18px;
+      position: relative;
+      border: none;
+
+      a{
+        padding: 6px 16px;
+        &:hover{
+          opacity: 0.6;
+        }
+        &:last-child{
+          padding-bottom: 16px;
+        }
+      }
+    }
+
+    .Dropdown.Open {
+      @include visible-block;
+    }
+  }
+
+  .MenuToggle {
+    display: none;
+  }
+  
+  .MenuToggleLabel {
+    z-index: 50;
+    cursor: pointer;
+    display: block;
+
+    @media (min-width: 1280px) {
+      display: none;
+    }
+    
+    .MenuIconLine {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+  }
+  
+  .MenuIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1.5rem;
+    height: 1.25rem;
+  }
+  
+  .MenuIconLine {
+    display: block;
+    background-color: var(--black);
+    height: 2px;
+  }
+  
+  .MenuToggle:checked ~ .MenuContainer {
+    @include visible-block;
+  }
+  
+  .MenuToggle:checked + .MenuToggleLabel {
+    .MenuIconLine {
+      &:nth-child(1) {
+        transform: translateY(8.5px) rotate(45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+      }
+    }
+  }
+}

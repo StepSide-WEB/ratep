@@ -1,0 +1,98 @@
+"use client"
+import CardImage from "@/shared/ui-kit/cards/card-image"
+import Heading from "@/shared/ui-kit/heading"
+import LogoTransparent from "@/shared/ui-kit/icons/logo-transparent"
+import Badge from "@/shared/ui-kit/label"
+import TestimonialsMarquee from "@/shared/ui-kit/testimonials-marquee"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/all"
+import Image from "next/image"
+import { useEffect, useRef } from "react"
+
+gsap.registerPlugin(ScrollTrigger)
+
+export default function Home() {
+	const previewRef = useRef(null)
+	const secondSectionRef = useRef(null)
+
+	useEffect(() => {
+		if (!previewRef.current || !secondSectionRef.current) return
+
+		const preview = previewRef.current
+		const secondSection = secondSectionRef.current
+
+		ScrollTrigger.create({
+			trigger: secondSection,
+			start: "-220px 60%",
+			end: "bottom 200px",
+			scrub: true,
+			onUpdate: (self) => {
+				const scale = 1 + self.progress * 1.4
+				console.log(scale)
+
+				gsap.set(preview, {
+					width: `${scale * 640}px`,
+					height: `${scale * 160}px`,
+				})
+			},
+		})
+	}, [])
+
+	return (
+		<>
+			{/* Mobile */}
+			<section className='md:hidden relative flex flex-col justify-end h-[calc(100svh-56px)] max-h-[1000px]'>
+				<Image className='absolute object-center object-cover' src='/preview.png' fill alt='Preview' />
+				<div className='z-20 relative flex flex-col gap-y-4 p-4 text-white'>
+					<Heading className='text-left'>
+						Создаём инновации <br /> для российского рынка
+					</Heading>
+					<p className='opacity-60 text-sm tracking-[-0.015em]'>
+						В разработке и производстве продукции
+						<br />
+						уже более 15 лет
+					</p>
+				</div>
+				<TestimonialsMarquee className='z-20 relative pb-4 max-w-full' />
+			</section>
+			{/* PC */}
+			<section className='hidden relative md:flex flex-col justify-center items-center border-b min-h-[690px] overflow-hidden'>
+				<TestimonialsMarquee gradientWidth={400} />
+				<Heading className='mt-4 tracking-[-0.04em]'>
+					Создаём инновации <br /> для российского рынка
+				</Heading>
+				<div className='relative mt-8 w-[640px] h-40 overflow-hidden'></div>
+				<div
+					ref={previewRef}
+					className='absolute bg-black-10 rounded-sm w-[640px] h-40 overflow-hidden translate-y-[calc(50%+16px)]'
+				>
+					<Image className='object-center object-cover' src='/preview.png' fill alt='Preview' />
+				</div>
+				<Badge className='mt-6'>Лидеры рынка</Badge>
+				<p className='mt-3 max-w-[243px] text-sm text-center leading-none tracking-[-0.015em]'>
+					{" "}
+					В разработке и производстве продукции уже более 15 лет
+				</p>
+			</section>
+			<section className='relative flex lg:flex-row flex-col justify-between border-b'>
+				<div className='absolute h-0' ref={secondSectionRef}></div>
+				<CardImage className='md:border-r border-b md:border-b-0' image='/main-page/cards/1.png'>
+					Продукция
+					<br />
+					для подвижных составов
+				</CardImage>
+				<CardImage imageClassName='h-[263px]' image='/main-page/cards/2.png'>
+					Продукция
+					<br />
+					для телекоммуникации
+				</CardImage>
+			</section>
+			<section className='flex lg:flex-row flex-col justify-between gap-x-12 px-4 sm:px-6 py-6 sm:py-14 min-h-[500px] xl:min-h-[630px]'>
+				<LogoTransparent className='w-full lg:w-[unset]' />
+				<p className='max-w-[690px] xl:text-[40px] text-2xl sm:text-3xl lg:text-4xl leading-none'>
+					Мы являемся лидерами среди производителей оборудования для подвижных составов и телекоммуникаций в России
+				</p>
+			</section>
+		</>
+	)
+}

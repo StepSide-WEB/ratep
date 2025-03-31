@@ -1,0 +1,15 @@
+.CardImage{
+  svg path{
+    fill: var(--black);
+  }
+
+  &:hover {
+    svg path{
+      fill: var(--accent);
+    }
+
+    p{
+      color: var(--accent);
+    }
+  } 
+}
