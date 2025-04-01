@@ -59,7 +59,7 @@ const Horizontal = () => {
 			scrollTrigger: {
 				trigger: containerRef.current,
 				pin: true,
-				scrub: 0.6,
+				scrub: 2,
 				snap: 1 / (sections.length - 1),
 				end: () => `+=${width}`,
 				onUpdate: (self) => setActiveIndex(Math.round(self.progress * (sections.length - 1))),
