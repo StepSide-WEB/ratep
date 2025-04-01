@@ -35,18 +35,13 @@ const Items = ({ className }: { className?: string }) => {
 						</div>
 						<div
 							className={cn(
-								"top-0 left-0 -z-20 fixed pointer-events-none bg-[#00122E1A] opacity-0 transition duration-300 delay-200 backdrop-blur-md w-full h-[100svh]",
+								"top-0 left-0 -z-20 fixed pointer-events-none bg-[#00122E1A] opacity-0 transition duration-300 delay-150 backdrop-blur-md w-full h-[100svh]",
 								s.Overlay
 							)}
 						></div>
 					</div>
 				</li>
 			))}
-			<li className='bg-white'>
-				<Link className='px-6 py-5' href='#'>
-					Новости
-				</Link>
-			</li>
 			<li className='bg-white'>
 				<Link className='px-6 py-5' href='#'>
 					Контакты

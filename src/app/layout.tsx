@@ -29,7 +29,7 @@ export default function RootLayout({
 				<ProgressBarProvider>
 					<PagePreloader />
 					<Header />
-					<main className='mx-auto pt-14 max-w-[1600px]'>{children}</main>
+					<main className='mx-auto pt-14 max-w-[1600px] overflow-x-hidden'>{children}</main>
 				</ProgressBarProvider>
 			</body>
 		</html>

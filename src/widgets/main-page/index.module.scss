@@ -1,0 +1,23 @@
+.Horizontal{
+  .Icons{
+    svg:not(.Stroke){
+      & path{
+        fill: var(--accent);
+      }
+  
+      &.Active path{
+        fill: var(--white);
+      }
+    }
+
+    svg.Stroke{
+      & path{
+        stroke: var(--accent);
+      }
+  
+      &.Active path{
+        stroke: var(--white);
+      }
+    }
+  }
+}
