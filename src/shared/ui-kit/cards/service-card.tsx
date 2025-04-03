@@ -15,9 +15,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ Icon, border, children, link 
 		<Link
 			href={link || ""}
 			className={cn(
-				"flex flex-col justify-between p-4 sm:p-6 w-full h-full",
+				"flex flex-col justify-between p-4 sm:p-6 w-full h-full transition duration-200",
 				border && "sm:border-r border-b sm:border-b-0",
-				s.Card,
+				s.ServiceCard,
 				s.WithoutSVG
 			)}
 		>
@@ -25,7 +25,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ Icon, border, children, link 
 				<Icon className='size-10 sm:size-[52px]' />
 				<ArrowUpRight className='sm:hidden fill-black ml-auto' />
 			</div>
-			<p className='leading-none transition duration-200'>{children}</p>
+			<p className='leading-none'>{children}</p>
 		</Link>
 	)
 }

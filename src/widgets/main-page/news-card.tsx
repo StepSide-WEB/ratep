@@ -15,7 +15,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ title, description, date }) => {
 	return (
 		<Link
 			href='#'
-			className='flex flex-col gap-y-6 bg-[#F8F8F9] p-4 sm:p-5 min-w-[298px] sm:min-w-[343px] max-w-[343px]'
+			className='flex flex-col gap-y-6 bg-[#F8F8F9] hover:bg-[#F1F1F2] p-4 sm:p-5 min-w-[298px] sm:min-w-[343px] max-w-[343px] transition duration-200'
 		>
 			<div className='pb-4 border-b h-full'>
 				<p className='font-medium text-xl leading-none'>{title}</p>

@@ -31,9 +31,12 @@ const ProductCategory = forwardRef<
 				</div>
 				<Link
 					href='#'
-					className='hidden sm:flex [&>*]:hover:fill-accent max-w-[460px] hover:text-accent transition duration-200'
+					className='hidden sm:flex gap-x-0 hover:gap-x-4 [&>*]:hover:fill-accent w-fit hover:text-accent transition-all duration-200'
 				>
-					<Heading>Перейти в каталог</Heading>
+					<Heading className='w-fit'>
+						Перейти
+						<br />в каталог
+					</Heading>
 					<ArrowUpRight className='fill-black size-14' />
 				</Link>
 			</div>

@@ -17,3 +17,14 @@
     }
   } 
 }
+
+.ServiceCard{
+  &:hover{
+    background-color: var(--accent);
+    color: var(--white);
+  }
+
+  &:hover svg path{
+    stroke: var(--white);
+  }
+}

@@ -52,7 +52,7 @@ const RequestSection = () => {
 			className='flex flex-col justify-center items-center mx-auto px-4 py-14 sm:py-28 max-w-[340px] 3xs:max-w-[1381px]'
 		>
 			<div ref={requestRef} className='flex items-start gap-x-2 sm:gap-x-3'>
-				<Link href='#' className='flex items-start gap-x-2 sm:gap-x-3'>
+				<Link href='#' className='flex items-start gap-x-2 sm:gap-x-3 hover:gap-x-6 transition-all duration-300'>
 					<Heading className='text-accent tracking-tighter'>Оставить заявку</Heading>
 					<ArrowUpRight className='fill-accent mt-0.5 sm:mt-2 size-6 sm:size-8' />
 				</Link>

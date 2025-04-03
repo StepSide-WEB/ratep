@@ -1,21 +1,25 @@
+import { cn } from "@/shared/lib/utils"
+import ArrowDown from "@/shared/ui-kit/icons/arrow-down"
 import Logo from "@/shared/ui-kit/icons/logo"
 import { Link } from "react-transition-progress/next"
+import s from "./index.module.scss"
 
 const Footer = () => {
 	return (
-		<footer className='flex 2md:flex-row flex-col justify-between gap-x-20 gap-y-14 sm:mt-[90px] mb-14 px-4 sm:px-6 pt-8 pb-[125px] border-t sm:border-t-0 sm:border-b'>
+		<footer
+			className={cn(
+				"flex 2md:flex-row flex-col justify-between gap-x-20 gap-y-14 sm:mt-[90px] mb-14 px-4 sm:px-6 pt-8 pb-[125px] border-t sm:border-t-0 sm:border-b",
+				s.Footer
+			)}
+		>
 			<Logo className='size-16' />
 			<div className='flex flex-wrap gap-x-16 gap-y-9 leading-[1.3]'>
 				<div className='flex flex-col gap-y-9'>
 					<div>
 						<p className='pb-5 text-[#00122E66] text-sm'>Контактные данные</p>
 						<div className='flex flex-col gap-y-3 font-medium text-base'>
-							<Link href='#' className='leading-[1.3]'>
-								8 (800) 201-84-25
-							</Link>
-							<Link href='#' className='leading-[1.3]'>
-								info@ratep-inn.ru
-							</Link>
+							<p className='leading-[1.3]'>8 (800) 201-84-25</p>
+							<p className='leading-[1.3]'>info@ratep-inn.ru</p>
 						</div>
 					</div>
 					<div>
@@ -109,7 +113,9 @@ const Footer = () => {
 					</div>
 				</div>
 			</div>
-			<div className='hidden 2md:flex justify-center items-center bg-[#F8F8F9] rounded-full size-11 cursor-pointer'></div>
+			<div className='hidden 2md:flex justify-center items-center bg-[#F8F8F9] hover:bg-[#00122E] [&>*]:hover:stroke-white rounded-full size-11 transition duration-200 cursor-pointer'>
+				<ArrowDown className='size-4 rotate-180' />
+			</div>
 		</footer>
 	)
 }

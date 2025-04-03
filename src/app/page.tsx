@@ -95,9 +95,9 @@ export default function Home() {
 			<section className='flex 2md:flex-row flex-col justify-between gap-y-6 px-4 sm:px-6 pt-[90px] pr-0 sm:pr-6 pb-[74px]'>
 				<Link
 					href='#'
-					className='flex [&>*]:hover:fill-accent pb-6 border-b 2md:border-b-0 hover:text-accent leading-none transition duration-200'
+					className='flex gap-x-0 hover:gap-x-2 [&>*]:hover:fill-accent pb-6 border-b 2md:border-b-0 hover:text-accent leading-none transition-all duration-200'
 				>
-					<p className='hidden 2md:block text-2xl leading-none'>
+					<p className='hidden 2md:block w-fit text-2xl leading-none'>
 						Все новости <br /> предприятия
 					</p>
 					<p className='2md:hidden block text-2xl leading-none'>Новости предприятия</p>
