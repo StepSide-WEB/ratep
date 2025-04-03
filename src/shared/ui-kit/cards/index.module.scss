@@ -1,11 +1,15 @@
-.CardImage{
-  svg path{
-    fill: var(--black);
+.Card{
+  &:not(.WithoutSVG){
+    svg path{
+      fill: var(--black);
+    }
   }
 
   &:hover {
-    svg path{
-      fill: var(--accent);
+    &:not(.WithoutSVG){
+      svg path{
+        fill: var(--accent);
+      }
     }
 
     p{

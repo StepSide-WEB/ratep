@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from "react"
 import s from "./index.module.scss"
 import Settings from "@/shared/ui-kit/icons/settings"
 import Train from "@/shared/ui-kit/icons/train"
+import NumberHeading from "@/shared/ui-kit/heading/number"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -127,19 +128,17 @@ const Horizontal = () => {
 						ref={(el) => {
 							if (el) panelsRef.current[index] = el
 						}}
-						className='flex flex-col justify-end pb-3 pl-4 sm:pl-6 w-screen h-full'
+						className='relative flex flex-col justify-end pb-3 pl-4 sm:pl-6 w-screen h-full'
 					>
-						<p
+						<NumberHeading
 							ref={(el) => {
 								if (el) numbersRef.current[index] = el
 							}}
-							className={cn(
-								"mr-auto text-[80px] 3xs:text-[96px] md:text-[120px] xl:text-[160px] leading-[.85] whitespace-nowrap transition-colors border-b w-full tracking-[-0.04em]",
-								activeIndex <= index ? "text-accent" : "text-black-10"
-							)}
+							className={cn("mr-auto", activeIndex <= index ? "text-accent" : "text-black-10")}
 						>
 							{num}
-						</p>
+						</NumberHeading>
+						{index === 0 && <div className='bottom-10 left-0 absolute bg-black-10 w-[300vw] h-[1px]'></div>}
 						<p
 							className={cn(
 								"mt-4 text-sm leading-none transition-opacity",

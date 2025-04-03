@@ -21,6 +21,7 @@ const config: Config = {
 				white: "var(--white)",
 				black: "var(--black)",
 				"black-10": "var(--black-10)",
+				"black-60": "var(--black-60)",
 				"accent-10": "var(--accent-10)",
 				accent: "var(--accent)",
 				border: "var(--border)",

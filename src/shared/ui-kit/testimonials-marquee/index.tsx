@@ -9,24 +9,32 @@ import Sinara from "../icons/logos/sinara"
 import Tmx from "../icons/logos/tmx"
 import { cn } from "@/shared/lib/utils"
 
-const TestimonialsMarquee = ({ className, gradientWidth }: { className?: string; gradientWidth?: number }) => {
+const logos = [BelarusRw, Bmz, Metrovagonmash, Moscowmetro, RussianRw, Sinara, Tmx]
+
+const TestimonialsMarquee = ({
+	className,
+	gradientWidth = 0,
+	huge,
+}: {
+	className?: string
+	gradientWidth?: number
+	huge?: boolean
+}) => {
 	return (
-		<div className={cn("max-w-[400px] md:max-w-[750px]", className)}>
+		<div className={cn(!huge ? "max-w-[400px] md:max-w-[750px]" : "border-b border-t", className)}>
 			<Marquee
-				className='flex gap-x-6 sm:gap-x-12'
+				className={cn("flex", !huge && "gap-x-6 sm:gap-x-12")}
 				gradient
 				gradientColor='white'
-				gradientWidth={gradientWidth || 0}
+				gradientWidth={gradientWidth}
 				speed={30}
 			>
-				<div className='flex items-center gap-x-10'>
-					<BelarusRw />
-					<Bmz />
-					<Metrovagonmash />
-					<Moscowmetro />
-					<RussianRw />
-					<Sinara />
-					<Tmx />
+				<div className={cn("flex items-center", !huge && "gap-x-10")}>
+					{logos.map((Logo, index) => (
+						<div key={index} className={cn(huge && "size-48 sm:size-72 flex items-center justify-center border-r")}>
+							<Logo className={cn(huge && "size-20 sm:size-32")} />
+						</div>
+					))}
 				</div>
 			</Marquee>
 		</div>

@@ -16,7 +16,7 @@ const CardImage = ({ className, children, image, imageClassName }: CardImageProp
 			href='#'
 			className={cn(
 				"flex flex-col justify-between gap-y-5 p-4 sm:p-6 w-full text-xl sm:text-2xl leading-none cursor-pointer",
-				s.CardImage,
+				s.Card,
 				className
 			)}
 		>

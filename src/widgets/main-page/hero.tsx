@@ -47,7 +47,7 @@ const Hero = () => {
 						уже более 15 лет
 					</p>
 				</div>
-				<TestimonialsMarquee className='z-20 relative pb-4 max-w-full' />
+				<TestimonialsMarquee className='z-20 relative pb-8 max-w-full' />
 			</section>
 			{/* PC */}
 			<section className='hidden relative md:flex flex-col justify-center items-center border-b min-h-[690px] overflow-hidden'>
