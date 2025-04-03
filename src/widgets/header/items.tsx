@@ -5,6 +5,8 @@ import { Link } from "react-transition-progress/next"
 import { useState } from "react"
 import ArrowDown from "@/shared/ui-kit/icons/arrow-down"
 import { menuItems } from "./constants"
+import ButtonPrimary from "@/shared/ui-kit/buttons/button-primary"
+import ArrowRight from "@/shared/ui-kit/icons/arrow-right"
 
 const Items = ({ className }: { className?: string }) => {
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null)
@@ -46,6 +48,12 @@ const Items = ({ className }: { className?: string }) => {
 				<Link className='px-6 py-5' href='#'>
 					Контакты
 				</Link>
+			</li>
+			<li className='xl:hidden block bg-white'>
+				<ButtonPrimary isActive className='justify-start items-start'>
+					<span>Оставить заявку</span>
+					<ArrowRight className='top-0.5 relative' />
+				</ButtonPrimary>
 			</li>
 		</ul>
 	)

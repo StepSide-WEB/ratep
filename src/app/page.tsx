@@ -1,6 +1,5 @@
 "use client"
 import ServiceCard from "@/shared/ui-kit/cards/service-card"
-import Heading from "@/shared/ui-kit/heading"
 import NumberHeading from "@/shared/ui-kit/heading/number"
 import ArrowUpRight from "@/shared/ui-kit/icons/arrow-up-right"
 import LogoTransparent from "@/shared/ui-kit/icons/logo-transparent"
@@ -11,7 +10,9 @@ import Badge from "@/shared/ui-kit/label"
 import TestimonialsMarquee from "@/shared/ui-kit/testimonials-marquee"
 import Hero from "@/widgets/main-page/hero"
 import Horizontal from "@/widgets/main-page/horizontal"
-import Image from "next/image"
+import NewsCard from "@/widgets/main-page/news-card"
+import ProductSection from "@/widgets/main-page/product-section"
+import RequestSection from "@/widgets/main-page/request-section"
 import { Link } from "react-transition-progress/next"
 
 export default function Home() {
@@ -26,8 +27,15 @@ export default function Home() {
 			</section>
 			<Horizontal />
 			<section className='flex sm:flex-row flex-col-reverse w-full sm:h-[450px] lg:h-[670px]'>
-				<div className='relative w-full h-[450px] sm:h-full'>
-					<Image className='object-cover' src='/main-page/ratep.png' alt='Ratep' fill />
+				<div className='relative w-full h-[450px] sm:h-full overflow-hidden'>
+					<video
+						src='/main-page/videos/2.mp4'
+						className='absolute my-auto h-full object-cover'
+						autoPlay
+						loop
+						muted
+						playsInline
+					/>
 				</div>
 				<div className='flex items-end p-4 sm:p-6 w-full h-[300px] sm:h-auto'>
 					<p className='lg:text-[40px] text-2xl leading-none tracking-tight'>
@@ -81,18 +89,40 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<TestimonialsMarquee huge className='mt-24 w-full leading-none' />
-			<section className='flex flex-col justify-center items-center mx-auto px-4 py-28 max-w-[340px] 3xs:max-w-[1381px]'>
-				<div className='flex items-start gap-x-2 sm:gap-x-3'>
-					<Link href='#'>
-						<Heading className='text-accent tracking-tighter'>Оставить заявку</Heading>
-					</Link>
-					<ArrowUpRight className='fill-accent mt-0.5 sm:mt-2 size-6 sm:size-8' />
+			<TestimonialsMarquee huge className='z-20 relative bg-white mt-24 w-full leading-none' />
+			<RequestSection />
+			<ProductSection />
+			<section className='flex 2md:flex-row flex-col justify-between gap-y-6 px-4 sm:px-6 pt-[90px] pr-0 sm:pr-6 pb-[74px]'>
+				<Link
+					href='#'
+					className='flex [&>*]:hover:fill-accent pb-6 border-b 2md:border-b-0 hover:text-accent leading-none transition duration-200'
+				>
+					<p className='hidden 2md:block text-2xl leading-none'>
+						Все новости <br /> предприятия
+					</p>
+					<p className='2md:hidden block text-2xl leading-none'>Новости предприятия</p>
+					<ArrowUpRight className='hidden 2md:block fill-black' />
+				</Link>
+				<div className='flex gap-x-2 overflow-x-auto'>
+					{[
+						{
+							title: "На ООО «РАТЕП-ИННОВАЦИЯ» идут последние приготовления к новогодним праздникам",
+							description:
+								"В преддверии Нового года на ООО «РАТЕП-ИННОВАЦИЯ» проходит конкурс на украшение двери кабинета или рабочего места. Сотрудники предприятия проявляют свой творческий подход и дизайнерскую смекалку в реализации своих идей...",
+							date: { day: "17", month: "дек", year: "2024" },
+						},
+						{
+							title: "«Билет в будущее» на ООО «РАТЕП-ИННОВАЦИЯ»",
+							description:
+								"Экскурсия на завод состоялась в рамках проекта «Билет в будущее», в котором участвует Серпуховский центр профориентации и трудоустройства молодёжи. Школьникам провели инструктаж по технике безопасности...",
+							date: { day: "15", month: "дек", year: "2024" },
+						},
+					].map((news, index) => (
+						<NewsCard key={index} {...news} />
+					))}
 				</div>
-				<Heading className='opacity-20 mt-1 text-center tracking-tighter'>
-					Ответственно подходим к работе и держим высокую планку качества
-				</Heading>
 			</section>
+			<LogoTransparent className='hidden sm:block size-full' />
 		</>
 	)
 }
