@@ -47,12 +47,12 @@ const Hero = () => {
 
 	return (
 		<>
-			<section className='md:hidden relative flex flex-col justify-end h-[calc(100svh-56px)] max-h-[1000px] overflow-hidden'>
+			<section className='md:hidden relative flex flex-col justify-end h-[calc(100svh-56px)] max-h-[900px] sm:max-h-[1000px] overflow-hidden'>
 				{/* <Image className='absolute object-center object-cover' src='/preview.png' fill alt='Preview' /> */}
 				<video
 					ref={videoRef}
 					src='/main-page/videos/1.mp4'
-					className='absolute h-[calc(100svh-56px)] max-h-[1000px] object-center object-contain scale-[3] 3xs:scale-[2.1] xs:scale-[2.8] md:scale-[1.8]'
+					className='top-0 absolute h-full object-center object-cover'
 					autoPlay
 					loop
 					muted
