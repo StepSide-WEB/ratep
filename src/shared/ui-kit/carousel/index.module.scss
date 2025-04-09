@@ -1,0 +1,19 @@
+.CarouselContext{
+	position: relative;
+}
+
+.CarouselContent {
+	display: flex;
+	gap: 25px;
+	height: 100%;
+	width: 264px;
+	@media screen and (max-width: 391px) {
+		width: 275px;
+		gap: 20px;
+	}
+}
+
+.CarouselContentVertical {
+	margin-top: 1rem;
+	flex-direction: column;
+}

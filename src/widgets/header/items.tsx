@@ -29,9 +29,9 @@ const Items = ({ className }: { className?: string }) => {
 					</Link>
 					<div className={cn(s.Dropdown, openDropdown === key && s.Open)}>
 						<div className={s.Content}>
-							{links.map((link) => (
-								<Link className='z-20 relative bg-white' key={link} href='#'>
-									{link}
+							{links.map(({ label, href }) => (
+								<Link className='z-20 relative bg-white' key={label} href={href}>
+									{label}
 								</Link>
 							))}
 						</div>
@@ -45,7 +45,7 @@ const Items = ({ className }: { className?: string }) => {
 				</li>
 			))}
 			<li className='bg-white'>
-				<Link className='px-6 py-5' href='#'>
+				<Link className='px-6 py-5' href='/contacts'>
 					Контакты
 				</Link>
 			</li>

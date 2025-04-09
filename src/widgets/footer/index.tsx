@@ -8,7 +8,7 @@ const Footer = () => {
 	return (
 		<footer
 			className={cn(
-				"flex 2md:flex-row flex-col justify-between gap-x-20 gap-y-14 sm:mt-[90px] mb-14 px-4 sm:px-6 pt-8 pb-[125px] border-t sm:border-t-0 sm:border-b",
+				"flex 2md:flex-row flex-col bg-white justify-between gap-x-20 gap-y-14 px-4 sm:px-6 pt-8 pb-[125px] border-t sm:border-t-0 sm:border-b",
 				s.Footer
 			)}
 		>

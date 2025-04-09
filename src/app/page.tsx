@@ -122,7 +122,7 @@ export default function Home() {
 					))}
 				</div>
 			</section>
-			<LogoTransparent className='hidden sm:block size-full' />
+			<LogoTransparent className='hidden sm:block sm:mb-[90px] size-full' />
 		</>
 	)
 }

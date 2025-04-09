@@ -2,16 +2,19 @@
 import { cn } from "@/shared/lib/utils"
 import Fabric from "@/shared/ui-kit/icons/fabric"
 import Badge from "@/shared/ui-kit/label"
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/all"
+import gsap from "gsap/dist/gsap"
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 import Image from "next/image"
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import s from "./index.module.scss"
 import Settings from "@/shared/ui-kit/icons/settings"
 import Train from "@/shared/ui-kit/icons/train"
 import NumberHeading from "@/shared/ui-kit/heading/number"
+import { useIsomorphicLayoutEffect } from "@/shared/hooks/useIsomorphicLayoutEffect"
 
-gsap.registerPlugin(ScrollTrigger)
+if (typeof window !== "undefined") {
+	gsap.registerPlugin(ScrollTrigger)
+}
 
 const data = [
 	[
@@ -49,28 +52,28 @@ const Horizontal = () => {
 	const numbersRef = useRef<HTMLParagraphElement[]>([])
 	const [activeIndex, setActiveIndex] = useState(0)
 
-	useEffect(() => {
-		if (!containerRef.current || panelsRef.current.length === 0) return
+	useIsomorphicLayoutEffect(() => {
+		const ctx = gsap.context(() => {
+			if (!containerRef.current || panelsRef.current.length === 0) return
 
-		const sections = panelsRef.current
-		const width = containerRef.current?.offsetWidth || 0
-		const tl = gsap.to(sections, {
-			xPercent: -100 * (sections.length - 1),
-			ease: "none",
-			scrollTrigger: {
-				trigger: containerRef.current,
-				pin: true,
-				scrub: 2,
-				snap: 1 / (sections.length - 1),
-				end: () => `+=${width}`,
-				onUpdate: (self) => setActiveIndex(Math.round(self.progress * (sections.length - 1))),
-			},
-		})
+			const sections = panelsRef.current
+			const width = containerRef.current?.offsetWidth || 0
 
-		return () => {
-			tl.kill()
-			ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
-		}
+			gsap.to(sections, {
+				xPercent: -100 * (sections.length - 1),
+				ease: "none",
+				scrollTrigger: {
+					trigger: containerRef.current,
+					pin: true,
+					scrub: 2,
+					snap: 1 / (sections.length - 1),
+					end: () => `+=${width}`,
+					onUpdate: (self) => setActiveIndex(Math.round(self.progress * (sections.length - 1))),
+				},
+			})
+		}, containerRef)
+
+		return () => ctx.revert()
 	}, [])
 
 	return (
