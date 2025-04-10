@@ -1,5 +1,6 @@
 import React from "react"
-import { Block, Description, Title } from "./block"
+import Block from "./block"
+import { Description, Title } from "./text-parts"
 
 const List = ({ activeIndex }: { activeIndex?: number }) => {
 	return (

@@ -1,8 +1,8 @@
 import { cn } from "@/shared/lib/utils"
-import ArrowDown from "@/shared/ui-kit/icons/arrow-down"
 import Logo from "@/shared/ui-kit/icons/logo"
 import { Link } from "react-transition-progress/next"
 import s from "./index.module.scss"
+import ToTop from "./to-top"
 
 const Footer = () => {
 	return (
@@ -113,9 +113,7 @@ const Footer = () => {
 					</div>
 				</div>
 			</div>
-			<div className='hidden 2md:flex justify-center items-center bg-[#F8F8F9] hover:bg-[#00122E] [&>*]:hover:stroke-white rounded-full size-11 transition duration-200 cursor-pointer'>
-				<ArrowDown className='size-4 rotate-180' />
-			</div>
+			<ToTop />
 		</footer>
 	)
 }

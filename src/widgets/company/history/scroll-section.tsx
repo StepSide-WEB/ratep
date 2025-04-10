@@ -6,9 +6,10 @@ import { useIsomorphicLayoutEffect } from "@/shared/hooks/useIsomorphicLayoutEff
 import { cn } from "@/shared/lib/utils"
 import { years } from "./constants"
 import Timeline from "./timeline"
-import { Block, Description, Title } from "./block"
 import List from "./list"
 import YearCarousel from "./carousel"
+import { Description, Title } from "./text-parts"
+import Block from "./block"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -19,31 +20,32 @@ const ScrollSection = () => {
 	const [activeIndex, setActiveIndex] = useState(0)
 
 	useIsomorphicLayoutEffect(() => {
-		const mm = window.matchMedia("(min-width: 1280px)")
+		if (!containerRef.current || sectionsRef.current.length === 0 || !timelineRef.current) return
+		const mm = gsap.matchMedia()
+		mm.add("(min-width: 1280px)", () => {
+			const ctx = gsap.context(() => {
+				gsap.to(sectionsRef.current, {
+					yPercent: -100 * (sectionsRef.current.length - 1),
+					ease: "none",
+					scrollTrigger: {
+						trigger: containerRef.current,
+						start: "top top",
+						end: () => `+=${containerRef.current!.offsetHeight * (sectionsRef.current.length / 2)}`,
+						scrub: true,
+						pin: true,
+						snap: 1 / (sectionsRef.current.length - 1),
+						onUpdate: (self) => setActiveIndex(Math.round(self.progress * (sectionsRef.current.length - 1))),
+						onEnter: () => timelineRef.current?.classList.remove("translate-y-full"),
+						onEnterBack: () => timelineRef.current?.classList.remove("translate-y-full"),
+						onLeave: () => timelineRef.current?.classList.add("translate-y-full"),
+						onLeaveBack: () => timelineRef.current?.classList.add("translate-y-full"),
+					},
+				})
+			}, containerRef)
+			return () => ctx.revert()
+		})
 
-		if (!mm.matches) return
-		const ctx = gsap.context(() => {
-			if (!containerRef.current || sectionsRef.current.length === 0 || !timelineRef.current) return
-			gsap.to(sectionsRef.current, {
-				yPercent: -100 * (sectionsRef.current.length - 1),
-				ease: "none",
-				scrollTrigger: {
-					trigger: containerRef.current,
-					start: "top top",
-					end: () => `+=${containerRef.current!.offsetHeight * (sectionsRef.current.length / 2)}`,
-					scrub: true,
-					pin: true,
-					snap: 1 / (sectionsRef.current.length - 1),
-					onUpdate: (self) => setActiveIndex(Math.round(self.progress * (sectionsRef.current.length - 1))),
-					onEnter: () => timelineRef.current?.classList.remove("translate-y-full"),
-					onEnterBack: () => timelineRef.current?.classList.remove("translate-y-full"),
-					onLeave: () => timelineRef.current?.classList.add("translate-y-full"),
-					onLeaveBack: () => timelineRef.current?.classList.add("translate-y-full"),
-				},
-			})
-		}, containerRef)
-
-		return () => ctx.revert()
+		return () => mm.revert()
 	}, [])
 
 	return (
