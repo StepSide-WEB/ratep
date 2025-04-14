@@ -5,6 +5,7 @@ import Header from "@/widgets/header"
 import { ProgressBarProvider } from "react-transition-progress"
 import PagePreloader from "@/shared/ui-kit/page-preloader"
 import Footer from "@/widgets/footer"
+import LenisProvider from "./lenis-provider"
 
 const suisseIntl = localFont({
 	src: [
@@ -27,12 +28,14 @@ export default function RootLayout({
 	return (
 		<html lang='ru'>
 			<body className={`${suisseIntl.className} ${suisseIntl.variable} antialiased`}>
-				<ProgressBarProvider>
-					<PagePreloader />
-					<Header />
-					<main className='mx-auto pt-14 max-w-[1600px] overflow-x-hidden'>{children}</main>
-					<Footer />
-				</ProgressBarProvider>
+				<LenisProvider>
+					<ProgressBarProvider>
+						<PagePreloader />
+						<Header />
+						<main className='mx-auto pt-14 max-w-[1600px] overflow-x-hidden'>{children}</main>
+						<Footer />
+					</ProgressBarProvider>
+				</LenisProvider>
 			</body>
 		</html>
 	)

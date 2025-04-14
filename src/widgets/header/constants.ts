@@ -21,7 +21,6 @@ export const menuItems = [
 			{ label: "Бережливое произ-во", href: "/company/lean-production" },
 			{ label: "Сот-во с уч. заведениями", href: "/company/education-partnerships" },
 			{ label: "Новости предприятия", href: "/company/internal-news" },
-			{ label: "Новости", href: "/news" },
 		],
 	},
 	{
