@@ -9,6 +9,9 @@ input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s eas
 body{
   outline: none;
 }
+tr, th{
+  font-weight: 450;
+}
 
 @tailwind base;
 @tailwind components;
@@ -18,9 +21,14 @@ body{
   --white: #ffffff;
   
   --gray-color: #F8F8F9;
+  --light-gray: #F8F8F9;
+  --dark-gray: #F1F1F2;
+
   --black: #00122E;
   --black-10: #00122E1A;
+  --black-20: #00122E33;
   --black-60: #00122E99;
+  --black-40: #00122E66;
 
   --border: #00122E1A;
 

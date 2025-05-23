@@ -20,8 +20,11 @@ const config: Config = {
 			colors: {
 				white: "var(--white)",
 				"gray-color": "var(--gray-color)",
+				"light-gray": "var(--light-gray)",
+				"dark-gray": "var(--dark-gray)",
 				black: "var(--black)",
 				"black-10": "var(--black-10)",
+				"black-40": "var(--black-40)",
 				"black-60": "var(--black-60)",
 				"accent-10": "var(--accent-10)",
 				accent: "var(--accent)",

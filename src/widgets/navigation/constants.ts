@@ -1,13 +1,15 @@
+import { categorySlugs } from "@/shared/lib/constants"
+
 export const menuItems = [
 	{
 		key: "products",
 		label: "Продукция",
 		links: [
-			{ label: "Электрооборудование для подвижного состава", href: "/products/electrical-equipment" },
-			{ label: "Интерьеры рельсового транспорта", href: "/products/interiors" },
-			{ label: "Электротехнические шины и токоотвод", href: "/products/busbars" },
-			{ label: "Телекоммуникационные стойки и шкафы", href: "/products/telecom-cabinets" },
-			{ label: "Продажа неликвидов", href: "/products/surplus-sale" },
+			{ label: "Электрооборудование для подвижного состава", href: "/products/" + categorySlugs.electricalEquipment },
+			{ label: "Интерьеры рельсового транспорта", href: "/products/" + categorySlugs.interiors },
+			{ label: "Электротехнические шины и токоотвод", href: "/products/" + categorySlugs.busbars },
+			{ label: "Телекоммуникационные стойки и шкафы", href: "/products/" + categorySlugs.telecomСabinets },
+			{ label: "Продажа неликвидов", href: "/products/" + categorySlugs.surplusSale },
 		],
 	},
 	{

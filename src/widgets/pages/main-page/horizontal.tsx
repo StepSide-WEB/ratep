@@ -39,7 +39,7 @@ const descriptions = [
 	"Тонн металла перерабатывается ежегодно",
 	"Выпущено аппаратных камер тепловоза",
 ]
-const trainImages = ["/trains/1.png", "/trains/2.png", "/trains/3.png"]
+const trainImages = ["/main-page/trains/1.png", "/main-page/trains/2.png", "/main-page/trains/3.png"]
 const icons = [
 	{ component: Fabric, index: 0 },
 	{ component: Settings, index: 1 },

@@ -27,7 +27,7 @@ const Header = () => {
 			</div>
 			<div className='hidden xl:flex items-center gap-x-6'>
 				<p className='max-h-3'>+7 (800) 201–8425</p>
-				<ButtonPrimary className='border-l'>
+				<ButtonPrimary className='border-l h-full'>
 					<span className='max-h-3'>Оставить заявку</span>
 					<ArrowRight className='top-0.5 relative' />
 				</ButtonPrimary>

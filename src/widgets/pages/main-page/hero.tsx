@@ -82,7 +82,9 @@ const Hero = () => {
 					ref={previewRef}
 					className='absolute bg-black-10 rounded-sm w-[640px] h-40 overflow-hidden translate-y-1/3 xl:translate-y-[calc(50%+16px)]'
 				>
-					{!videoLoaded && <Image className='object-center object-cover' src='/preview.png' fill alt='Preview' />}
+					{!videoLoaded && (
+						<Image className='object-center object-cover' src='/main-page/preview.png' fill alt='Preview' />
+					)}
 					<video
 						ref={videoRef}
 						src='/main-page/videos/1.mp4'

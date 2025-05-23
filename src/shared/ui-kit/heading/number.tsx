@@ -18,6 +18,6 @@ const NumberHeading = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLParagr
 	}
 )
 
-NumberHeading.displayName = "NumberHeading" // Нужно для корректной работы с React DevTools
+NumberHeading.displayName = "NumberHeading"
 
 export default NumberHeading

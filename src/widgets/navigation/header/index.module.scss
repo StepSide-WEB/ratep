@@ -36,10 +36,6 @@
     a{
       transition: all 150ms ease-in-out;
     }
-
-    a.Open{
-      opacity: 0.6;
-    }
     
     @media (min-width: 1280px){
       li:hover .Dropdown, li .Dropdown:hover{

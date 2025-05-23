@@ -1,7 +1,7 @@
 import { cn } from "@/shared/lib/utils"
 import s from "./index.module.scss"
-import Hero from "@/widgets/company/history/hero"
-import ScrollSection from "@/widgets/company/history/scroll-section"
+import Hero from "@/widgets/pages/company/history/hero"
+import ScrollSection from "@/widgets/pages/company/history/scroll-section"
 
 const Page = () => {
 	return (
