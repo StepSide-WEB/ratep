@@ -31,7 +31,7 @@ export default function YearCarousel({ years, onYearChange }: YearCarouselProps)
 	}, [carouselApi, handleSelect])
 
 	return (
-		<div className='relative flex justify-center items-center w-full'>
+		<div className='relative flex justify-center items-center w-full overflow-hidden'>
 			<div className='top-[calc(50%-8px)] left-1/2 absolute border rounded-full size-[184px] -translate-x-1/2 -translate-y-1/2'></div>
 
 			<Carousel setApi={setCarouselApi}>
