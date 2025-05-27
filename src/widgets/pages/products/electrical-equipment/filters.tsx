@@ -1,6 +1,6 @@
 "use client"
 import { productCategories } from "@/shared/data/products"
-import { categorySlugs } from "@/shared/lib/constants"
+import { categorySlugs } from "@/shared/lib/constants/slugs"
 import ButtonPrimary from "@/shared/ui-kit/buttons/button-primary"
 import InputFilter from "@/shared/ui-kit/inputs/input-filter"
 import SectionWrapper from "@/shared/ui-kit/wrappers/section-wrapper"

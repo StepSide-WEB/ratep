@@ -4,7 +4,7 @@ import s from "./index.module.scss"
 import { Link } from "react-transition-progress/next"
 import { useState } from "react"
 import ArrowDown from "@/shared/ui-kit/icons/arrow-down"
-import { menuItems } from "../constants"
+import { headerItems } from "../../../shared/lib/constants/navigation"
 import ButtonPrimary from "@/shared/ui-kit/buttons/button-primary"
 import ArrowRight from "@/shared/ui-kit/icons/arrow-right"
 
@@ -17,7 +17,7 @@ const Items = ({ className }: { className?: string }) => {
 
 	return (
 		<ul className={cn("items-center bg-white", s.List, className)}>
-			{menuItems.map(({ key, label, links }) => (
+			{headerItems.map(({ key, label, links }) => (
 				<li className='z-10 relative bg-white' key={key}>
 					<Link
 						onClick={() => toggleDropdown(key)}

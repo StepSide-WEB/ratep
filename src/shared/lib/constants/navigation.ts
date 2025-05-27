@@ -1,6 +1,19 @@
-import { categorySlugs } from "@/shared/lib/constants"
+import { categorySlugs } from "@/shared/lib/constants/slugs"
 
-export const menuItems = [
+type HeaderLink = {
+	label: string
+	href: string
+}
+
+type HeaderItem = {
+	key: HeaderItemKey
+	label: string
+	links: HeaderLink[]
+}
+
+type HeaderItemKey = "products" | "company" | "services" | "docs"
+
+export const headerItems: HeaderItem[] = [
 	{
 		key: "products",
 		label: "Продукция",
@@ -32,6 +45,19 @@ export const menuItems = [
 			{ label: "Контрактное производство", href: "/services/contract-manufacturing" },
 			{ label: "Гарантийное обслуживание", href: "/services/warranty" },
 			{ label: "Ремонт оборудования", href: "/services/repair" },
+		],
+	},
+]
+
+export const navigationItems: HeaderItem[] = [
+	...headerItems,
+	{
+		key: "docs",
+		label: "Документация",
+		links: [
+			{ label: "Конфиденциальность", href: "/docs/privacy-policy" },
+			{ label: "Оценка условий труда", href: "/docs/labor-protection" },
+			{ label: "Менеджмент качества", href: "/docs/quality-management" },
 		],
 	},
 ]

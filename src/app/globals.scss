@@ -19,7 +19,8 @@ tr, th{
 
 :root {
   --white: #ffffff;
-  
+  --white-60: #FFFFFF99;
+
   --gray-color: #F8F8F9;
   --light-gray: #F8F8F9;
   --dark-gray: #F1F1F2;
@@ -27,8 +28,8 @@ tr, th{
   --black: #00122E;
   --black-10: #00122E1A;
   --black-20: #00122E33;
-  --black-60: #00122E99;
   --black-40: #00122E66;
+  --black-60: #00122E99;
 
   --border: #00122E1A;
 
@@ -43,4 +44,12 @@ body {
   border-color: var(--border);
   border-style: solid;
   overflow: hidden;
+}
+
+.background-linear {
+  background: linear-gradient(180deg, #FFFFFF 56.38%, #F8F8F8 100%);
+}
+
+.dark-gradient{
+  background: linear-gradient(180deg, rgba(11, 11, 11, 0) 0%, #0B0B0B 100%);
 }

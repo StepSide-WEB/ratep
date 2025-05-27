@@ -7,7 +7,7 @@ import Filters from "./filters"
 const ElectricalEquipment = () => {
 	return (
 		<>
-			<SectionWrapper className='relative pt-10 pb-[240px] lg:pb-32 overflow-hidden'>
+			<SectionWrapper className='relative pt-10 pb-[240px] lg:pb-32 overflow-hidden background-linear'>
 				<Breadcrumbs />
 				<div className='mt-8'>
 					<HeadingSmall>
@@ -19,7 +19,7 @@ const ElectricalEquipment = () => {
 						высоким требованиям эксплуатации.
 					</p>
 				</div>
-				<div className='lg:right-0 bottom-0 left-0 lg:left-[unset] -z-10 absolute w-[450px] xl:w-[700px] h-[800px] translate-x-0 translate-y-1/2 md:translate-x-[5%] lg:translate-y-[40%] xl:translate-y-1/2'>
+				<div className='lg:right-0 bottom-0 left-0 lg:left-[unset] absolute w-[450px] xl:w-[700px] h-[800px] translate-x-0 translate-y-1/2 md:translate-x-[5%] lg:translate-y-[40%] xl:translate-y-1/2'>
 					<Image className='object-contain' src='/products/electrical-equipment/hero.png' fill alt='image' />
 				</div>
 			</SectionWrapper>

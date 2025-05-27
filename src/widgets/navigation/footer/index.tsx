@@ -3,7 +3,7 @@ import Logo from "@/shared/ui-kit/icons/logo"
 import { Link } from "react-transition-progress/next"
 import s from "./index.module.scss"
 import ToTop from "./to-top"
-import { menuItems } from "../constants"
+import { navigationItems } from "@/shared/lib/constants/navigation"
 
 const Footer = () => {
 	return (
@@ -36,7 +36,7 @@ const Footer = () => {
 				<div>
 					<p className='pb-5 text-[#00122E66] text-sm'>Продукция</p>
 					<div className='flex flex-col gap-y-3 font-medium text-base'>
-						{menuItems
+						{navigationItems
 							.find((i) => i.key === "products")
 							?.links.map((i) => (
 								<Link key={i.label} href={i.href} className='max-w-[250px] leading-[1.3]'>
@@ -48,7 +48,7 @@ const Footer = () => {
 				<div>
 					<p className='pb-5 text-[#00122E66] text-sm'>Компания</p>
 					<div className='flex flex-col gap-y-3 font-medium text-base'>
-						{menuItems
+						{navigationItems
 							.find((i) => i.key === "company")
 							?.links.map((i) => (
 								<Link key={i.label} href={i.href} className='max-w-[250px] leading-[1.3]'>
@@ -61,7 +61,7 @@ const Footer = () => {
 					<div>
 						<p className='pb-5 text-[#00122E66] text-sm'>Услуги</p>
 						<div className='flex flex-col gap-y-3 font-medium text-base'>
-							{menuItems
+							{navigationItems
 								.find((i) => i.key === "services")
 								?.links.map((i) => (
 									<Link key={i.label} href={i.href} className='max-w-[250px] leading-[1.3]'>
@@ -73,15 +73,13 @@ const Footer = () => {
 					<div>
 						<p className='pb-5 text-[#00122E66] text-sm'>Документация</p>
 						<div className='flex flex-col gap-y-3 font-medium text-base'>
-							<Link href='#' className='leading-[1.3]'>
-								Конфиденциальность
-							</Link>
-							<Link href='#' className='leading-[1.3]'>
-								Охрана условий труда
-							</Link>
-							<Link href='#' className='leading-[1.3]'>
-								Менеджмент качества
-							</Link>
+							{navigationItems
+								.find((i) => i.key === "docs")
+								?.links.map((i) => (
+									<Link key={i.label} href={i.href} className='max-w-[250px] leading-[1.3]'>
+										{i.label}
+									</Link>
+								))}
 						</div>
 					</div>
 				</div>

@@ -19,6 +19,7 @@ const config: Config = {
 		extend: {
 			colors: {
 				white: "var(--white)",
+				"white-60": "var(--white-60)",
 				"gray-color": "var(--gray-color)",
 				"light-gray": "var(--light-gray)",
 				"dark-gray": "var(--dark-gray)",

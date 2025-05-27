@@ -16,6 +16,7 @@ const ProductSection = () => {
 		if (!sectionRef.current || cardsRef.current.length < 2) return
 
 		const mm = gsap.matchMedia()
+		let hasRefreshed = false
 
 		mm.add("(min-width: 640px)", () => {
 			gsap.to(cardsRef.current.slice(1), {
@@ -32,9 +33,16 @@ const ProductSection = () => {
 						delay: 0,
 						ease: "power1.inOut",
 					},
+					onEnter: () => {
+						if (!hasRefreshed) {
+							hasRefreshed = true
+							ScrollTrigger.refresh()
+						}
+					},
 				},
 			})
 		})
+
 		return () => {
 			mm.revert()
 		}

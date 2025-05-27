@@ -12,7 +12,7 @@ import Hero from "@/widgets/pages/main-page/hero"
 import Horizontal from "@/widgets/pages/main-page/horizontal"
 import NewsCard from "@/widgets/pages/main-page/news-card"
 import ProductSection from "@/widgets/pages/main-page/product-section"
-import RequestSection from "@/widgets/pages/main-page/request-section"
+import RequestSection from "@/widgets/sections/request-section"
 import { Link } from "react-transition-progress/next"
 
 export default function Home() {

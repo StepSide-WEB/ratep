@@ -1,4 +1,4 @@
-import { categorySlugs, productSlugs } from "../lib/constants"
+import { categorySlugs, productSlugs } from "../lib/constants/slugs"
 
 export type Product = {
 	id: number

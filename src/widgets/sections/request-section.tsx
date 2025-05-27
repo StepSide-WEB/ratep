@@ -16,6 +16,7 @@ const RequestSection = () => {
 		if (!sectionRef.current || !requestRef.current) return
 
 		const mm = gsap.matchMedia()
+		let hasRefreshed = false
 
 		mm.add("(min-width: 640px)", () => {
 			gsap.to(requestRef.current, {
@@ -25,6 +26,12 @@ const RequestSection = () => {
 					start: "40% center",
 					end: "top center",
 					scrub: 1.4,
+					onEnter: () => {
+						if (!hasRefreshed) {
+							hasRefreshed = true
+							ScrollTrigger.refresh()
+						}
+					},
 				},
 			})
 		})

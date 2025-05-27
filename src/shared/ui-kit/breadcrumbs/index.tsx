@@ -2,10 +2,13 @@
 import { usePathname } from "next/navigation"
 import clsx from "clsx"
 import { productCategories } from "@/shared/data/products"
-import { menuItems } from "@/widgets/navigation/constants"
 import { Link } from "react-transition-progress/next"
+import { navigationItems } from "@/shared/lib/constants/navigation"
+import { cn } from "@/shared/lib/utils"
 
-const Breadcrumbs = ({ className }: { className?: string }) => {
+type Mode = "light" | "dark"
+
+const Breadcrumbs = ({ className, mode = "dark" }: { className?: string; mode?: Mode }) => {
 	const pathname = usePathname()
 	const segments = pathname.split("/").filter(Boolean)
 
@@ -35,7 +38,7 @@ const Breadcrumbs = ({ className }: { className?: string }) => {
 			}
 		}
 	} else {
-		const matched = menuItems.flatMap((section) => section.links).find((link) => link.href === pathname)
+		const matched = navigationItems.flatMap((section) => section.links).find((link) => link.href === pathname)
 		if (matched) {
 			crumbs.push({
 				label: matched.label,
@@ -52,15 +55,18 @@ const Breadcrumbs = ({ className }: { className?: string }) => {
 				const labelClasses = clsx(
 					"whitespace-nowrap",
 					!isLast && "max-w-[100px] truncate sm:max-w-none",
-					!isLast && "text-black-60 hover:underline"
+					!isLast && "hover:underline",
+					mode === "light" ? "text-white-60" : "text-black-60"
 				)
 				return (
 					<span key={i} className='flex items-center gap-x-2'>
-						{i !== 0 && <span className='text-black-60'>/</span>}
+						{i !== 0 && <span className={cn(mode === "light" ? "text-white-60" : "text-black-60")}>/</span>}
 						{isLast ? (
-							<span className='whitespace-nowrap'>{crumb.label}</span>
+							<span className={cn(mode === "light" ? "text-white" : "text-black", "whitespace-nowrap")}>
+								{crumb.label}
+							</span>
 						) : (
-							<Link href={crumb.href} className={labelClasses}>
+							<Link href={crumb.href} className={cn(mode === "light" ? "text-white-60" : "text-black", labelClasses)}>
 								{crumb.label}
 							</Link>
 						)}
