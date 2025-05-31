@@ -15,7 +15,6 @@ export const projects: Project[] = [
 		details: [
 			{ label: "Год сдачи", value: "2022" },
 			{ label: "Размер партии", value: "150 единиц" },
-			{ label: "Срок выполнения", value: "1.5 года" },
 			{ label: "Тип поезда", value: "Метро" },
 		],
 	},
@@ -26,7 +25,6 @@ export const projects: Project[] = [
 		details: [
 			{ label: "Год сдачи", value: "2022" },
 			{ label: "Размер партии", value: "150 единиц" },
-			{ label: "Срок выполнения", value: "1.5 года" },
 			{ label: "Тип поезда", value: "Метро" },
 		],
 	},
@@ -37,7 +35,6 @@ export const projects: Project[] = [
 		details: [
 			{ label: "Год сдачи", value: "2022" },
 			{ label: "Размер партии", value: "150 единиц" },
-			{ label: "Срок выполнения", value: "1.5 года" },
 			{ label: "Тип поезда", value: "Метро" },
 		],
 	},
@@ -48,7 +45,6 @@ export const projects: Project[] = [
 		details: [
 			{ label: "Год сдачи", value: "2022" },
 			{ label: "Размер партии", value: "150 единиц" },
-			{ label: "Срок выполнения", value: "1.5 года" },
 			{ label: "Тип поезда", value: "Метро" },
 		],
 	},
@@ -59,7 +55,6 @@ export const projects: Project[] = [
 		details: [
 			{ label: "Год сдачи", value: "2022" },
 			{ label: "Размер партии", value: "150 единиц" },
-			{ label: "Срок выполнения", value: "1.5 года" },
 			{ label: "Тип поезда", value: "Метро" },
 		],
 	},
@@ -70,7 +65,6 @@ export const projects: Project[] = [
 		details: [
 			{ label: "Год сдачи", value: "2022" },
 			{ label: "Размер партии", value: "150 единиц" },
-			{ label: "Срок выполнения", value: "1.5 года" },
 			{ label: "Тип поезда", value: "Метро" },
 		],
 	},
@@ -81,7 +75,6 @@ export const projects: Project[] = [
 		details: [
 			{ label: "Год сдачи", value: "2022" },
 			{ label: "Размер партии", value: "150 единиц" },
-			{ label: "Срок выполнения", value: "1.5 года" },
 			{ label: "Тип поезда", value: "Метро" },
 		],
 	},
@@ -92,7 +85,6 @@ export const projects: Project[] = [
 		details: [
 			{ label: "Год сдачи", value: "2022" },
 			{ label: "Размер партии", value: "150 единиц" },
-			{ label: "Срок выполнения", value: "1.5 года" },
 			{ label: "Тип поезда", value: "Метро" },
 		],
 	},
@@ -103,7 +95,6 @@ export const projects: Project[] = [
 		details: [
 			{ label: "Год сдачи", value: "2022" },
 			{ label: "Размер партии", value: "150 единиц" },
-			{ label: "Срок выполнения", value: "1.5 года" },
 			{ label: "Тип поезда", value: "Метро" },
 		],
 	},

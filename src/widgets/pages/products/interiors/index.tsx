@@ -51,7 +51,7 @@ const Interiors = () => {
 						<p className='mt-3 max-w-[535px] text-black-60 text-sm leading-[1.35] lg:leading-none'>
 							{project.description}
 						</p>
-						<div className='justify-between gap-5 grid grid-cols-2 xl:grid-cols-4 mt-8 w-full text-sm leading-none'>
+						<div className='justify-between gap-5 grid grid-cols-2 lg:grid-cols-3 mt-8 w-full text-sm leading-none'>
 							{project.details.map((detail, i) => (
 								<div key={i}>
 									<p className='text-black-60'>{detail.label}</p>
